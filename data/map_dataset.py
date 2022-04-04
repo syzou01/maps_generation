@@ -67,7 +67,7 @@ class MapDataset(BaseDataset):
             '''Write Your Code Here'''
 
             A_path = AB_path
-            B_path = "./maps/val_tgt/" + AB_path.split("/")[-1]
+            B_path = "./maps/val_tgt/" + AB_path[11:]
 
             A = AB
             B = Image.open(B_path).convert('RGB')
@@ -83,7 +83,7 @@ class MapDataset(BaseDataset):
             return {'A': A, 'B': B, 'A_paths': AB_path, 'B_paths': AB_path}
         
         elif self.phase == 'test':
-            
+
             A_path = B_path = AB_path
 
             A = B = AB
