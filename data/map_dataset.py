@@ -83,6 +83,7 @@ class MapDataset(BaseDataset):
             return {'A': A, 'B': B, 'A_paths': AB_path, 'B_paths': AB_path}
         
         elif self.phase == 'test':
+            
             A_path = B_path = AB_path
 
             A = B = AB
